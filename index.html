@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ningxin Zheng | AI Systems & Efficient Deep Learning</title>
+  <meta name="description" content="Personal homepage of Ningxin Zheng: AI systems, efficient deep learning, sparsity, GPU kernels, and large-scale distributed training." />
+  <meta name="theme-color" content="#0b1020" />
+  <meta property="og:title" content="Ningxin Zheng" />
+  <meta property="og:description" content="AI systems researcher focused on efficient deep learning, sparsity, GPU kernels, and distributed LLM systems." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/49771382?v=4" />
+  <link rel="preconnect" href="https://avatars.githubusercontent.com" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ningxin Zheng",
+    "url": "https://zheng-ningxin.github.io/",
+    "image": "https://avatars.githubusercontent.com/u/49771382?v=4",
+    "sameAs": [
+      "https://github.com/zheng-ningxin",
+      "https://scholar.google.com/citations?user=ND2CeBkAAAAJ&hl=zh-CN",
+      "https://dblp.org/pid/234/5381.html"
+    ],
+    "knowsAbout": [
+      "AI Systems",
+      "Efficient Deep Learning",
+      "Sparse Computation",
+      "GPU Kernels",
+      "Distributed LLM Training",
+      "Model Compression"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header" id="top">
+      <a class="brand" href="#top" aria-label="Ningxin Zheng home">
+        <span class="brand-mark">NZ</span>
+        <span class="brand-text">Ningxin Zheng</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark theme">Light</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="hero-heading">
+            <img class="hero-avatar" src="https://avatars.githubusercontent.com/u/49771382?v=4" alt="Ningxin Zheng GitHub avatar" />
+            <h1>Ningxin Zheng</h1>
+          </div>
+          <p class="hero-text">
+            AI systems researcher focusing on large-scale LLM training systems, efficient deep learning,
+            sparse computation, GPU kernels, and compiler/runtime techniques. He graduated from Shanghai
+            Jiao Tong University, worked at Microsoft Research Asia after graduation, and joined ByteDance
+            Seed in 2023 to build production-scale LLM training systems.
+          </p>
+          <div class="hero-actions" aria-label="Profile links">
+            <a class="button primary" href="https://github.com/zheng-ningxin" target="_blank" rel="noopener">GitHub</a>
+            <a class="button" href="https://scholar.google.com/citations?user=ND2CeBkAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Google Scholar</a>
+            <a class="button" href="https://dblp.org/pid/234/5381.html" target="_blank" rel="noopener">DBLP</a>
+          </div>
+        </div>
+        <aside class="citation-card" aria-label="Citation statistics">
+          <p class="profile-label">Citations</p>
+          <a class="citation-badge" href="https://scholar.google.com/citations?user=ND2CeBkAAAAJ&hl=en" target="_blank" rel="noopener">
+            <img
+              src="https://img.shields.io/endpoint?url=https%3A%2F%2Fzheng-ningxin.github.io%2Fdata%2Fgs_data_shieldsio.json&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"
+              alt="Google Scholar citations"
+            />
+          </a>
+          <p class="citation-note">Updated by GitHub Action from Google Scholar.</p>
+        </aside>
+      </section>
+
+      <section class="section" id="research">
+        <div class="section-heading">
+          <h2>Research focus</h2>
+        </div>
+        <div class="focus-grid">
+          <article class="focus-card">
+            <span class="focus-index">01</span>
+            <h3>LLM systems</h3>
+            <p>Production training and inference systems for MoE and long-context LLM workloads, with emphasis on throughput, resilience, and scalability.</p>
+          </article>
+          <article class="focus-card">
+            <span class="focus-index">02</span>
+            <h3>GPU kernels</h3>
+            <p>Low-level kernels and compiler/runtime support for sparse weights, low-precision tensors, communication overlap, and tile-centric programming.</p>
+          </article>
+          <article class="focus-card">
+            <span class="focus-index">03</span>
+            <h3>Sparse computation</h3>
+            <p>Frameworks and transformations that expose sparsity while preserving dense-kernel efficiency, including TeSA, PIT, and dynamic sparse execution.</p>
+          </article>
+          <article class="focus-card">
+            <span class="focus-index">04</span>
+            <h3>Model compression</h3>
+            <p>Efficient architecture search, pruning, latency prediction, and hardware-friendly optimization for practical deployment constraints.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="publications">
+        <div class="section-heading">
+          <p class="eyebrow">Publications</p>
+          <h2>Selected papers</h2>
+        </div>
+        <div class="publication-tabs" role="tablist" aria-label="Publication categories">
+          <button class="publication-tab active" type="button" data-publication-tab="systems">Systems</button>
+          <button class="publication-tab" type="button" data-publication-tab="algorithms">Algorithms</button>
+        </div>
+
+        <div class="publication-panel active" data-publication-panel="systems">
+          <div class="publication-list compact">
+            <article class="publication">
+              <div class="pub-year">2026</div>
+              <div>
+                <h3>MegaScale-MoE: Large-Scale Communication-Efficient Training of Mixture-of-Experts Models in Production</h3>
+                <p>EuroSys 2026 · Chao Jin, Ziheng Jiang, Zhihao Bai, Zheng Zhong, Juncai Liu, Xiang Li, <strong>Ningxin Zheng</strong>, et al.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2026</div>
+              <div>
+                <h3>MegaScale-Omni: A Hyper-Scale, Workload-Resilient System for MultiModal LLM Training in Production</h3>
+                <p>EuroSys 2026 · Chunyu Xue, Yangrui Chen, Jianyu Jiang, <strong>Ningxin Zheng</strong>, et al.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2026</div>
+              <div>
+                <h3>DITRON: Distributed Multi-level Tiling Compiler for Parallel Tensor Programs</h3>
+                <p>CoRR 2026 · Size Zheng, Xuegui Zheng, Hanshi Sun, Qi Hou, Wenlei Bao, Shiyu Li, <strong>Ningxin Zheng</strong>, et al.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2026</div>
+              <div>
+                <h3>DisagMoE: Computation-Communication Overlapped MoE Training via Disaggregated AF-Pipe Parallelism</h3>
+                <p>CoRR 2026 · Zhichen Zeng, Chi-Chih Chang, Jiayi Wang, Zezhou Wang, Zheng Zhong, <strong>Ningxin Zheng</strong>, et al.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2025</div>
+              <div>
+                <h3>ShadowKV: KV Cache in Shadows for High-Throughput Long-Context LLM Inference</h3>
+                <p>ICML 2025 · Hanshi Sun, Li-Wen Chang, Wenlei Bao, Size Zheng, <strong>Ningxin Zheng</strong>, Xin Liu, et al.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2025</div>
+              <div>
+                <h3>COMET: Fine-grained Computation-communication Overlapping for Mixture-of-Experts <span class="award">MLSys 2025 Honorable Mention Outstanding Paper</span></h3>
+                <p>MLSys 2025 · Shulai Zhang, <strong>Ningxin Zheng</strong>, Haibin Lin, Ziheng Jiang, Wenlei Bao, Chengquan Jiang, et al.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2025</div>
+              <div>
+                <h3>TileLink: Generating Efficient Compute-Communication Overlapping Kernels using Tile-Centric Primitives</h3>
+                <p>MLSys 2025 · Size Zheng, Jin Fang, Xuegui Zheng, Qi Hou, Wenlei Bao, Ziheng Jiang, <strong>Ningxin Zheng</strong>, et al.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2025</div>
+              <div>
+                <h3>Triton-distributed: Programming Overlapping Kernels on Distributed AI Systems with the Triton Compiler</h3>
+                <p>CoRR 2025 · Size Zheng, Wenlei Bao, Qi Hou, Xuegui Zheng, Jin Fang, Chenhui Huang, <strong>Ningxin Zheng</strong>, et al.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2025</div>
+              <div>
+                <h3>Boosting Embodied AI Agents through Perception-Generation Disaggregation and Asynchronous Pipeline Execution</h3>
+                <p>CoRR 2025 · Shulai Zhang, Ao Xu, Quan Chen, Han Zhao, Weihao Cui, Haibin Lin, <strong>Ningxin Zheng</strong>, et al.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2024</div>
+              <div>
+                <h3>Ladder: Enabling Efficient Low-Precision Deep Learning Computing through Hardware-aware Tensor Transformation</h3>
+                <p>OSDI 2024 · Lei Wang, Lingxiao Ma, Shijie Cao, Quanlu Zhang, Jilong Xue, Yining Shi, <strong>Ningxin Zheng</strong>, et al.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2024</div>
+              <div>
+                <h3>FLUX: Fast Software-based Communication Overlap On GPUs Through Kernel Fusion</h3>
+                <p>CoRR 2024 · Li-Wen Chang, Wenlei Bao, Qi Hou, Chengquan Jiang, Yinmin Zhong, Xuanrun Zhang, <strong>Ningxin Zheng</strong>, et al.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2023</div>
+              <div>
+                <h3>Efficient GPU Kernels for N:M-Sparse Weights in Deep Learning</h3>
+                <p>MLSys 2023 · Bin Lin, <strong>Ningxin Zheng</strong>, Lei Wang, Shijie Cao, Lingxiao Ma, Quanlu Zhang, et al.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2023</div>
+              <div>
+                <h3>Optimizing Dynamic Neural Networks with Brainstorm</h3>
+                <p>OSDI 2023 · Weihao Cui, Zhenhua Han, Lingji Ouyang, Yichuan Wang, <strong>Ningxin Zheng</strong>, et al.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2023</div>
+              <div>
+                <h3>PIT: Optimization of Dynamic Sparse Deep Learning Models via Permutation Invariant Transformation</h3>
+                <p>SOSP 2023 · <strong>Ningxin Zheng</strong>, Huiqiang Jiang, Quanlu Zhang, Zhenhua Han, Lingxiao Ma, et al.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2023</div>
+              <div>
+                <h3>SparDA: Accelerating Dynamic Sparse Deep Neural Networks via Sparse-Dense Transformation</h3>
+                <p>CoRR 2023 · <strong>Ningxin Zheng</strong>, Huiqiang Jiang, Quanlu Zhang, Zhenhua Han, Yuqing Yang, Lingxiao Ma, et al.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2022</div>
+              <div>
+                <h3>Toward QoS-Awareness and Improved Utilization of Spatial Multitasking GPUs</h3>
+                <p>IEEE Transactions on Computers 2022 · Wei Zhang, Quan Chen, <strong>Ningxin Zheng</strong>, Weihao Cui, Kaihua Fu, Minyi Guo.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2022</div>
+              <div>
+                <h3>Astraea: towards QoS-aware and resource-efficient multi-stage GPU services</h3>
+                <p>ASPLOS 2022 · Wei Zhang, Quan Chen, Kaihua Fu, <strong>Ningxin Zheng</strong>, Zhiyi Huang, Jingwen Leng, Minyi Guo.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2022</div>
+              <div>
+                <h3>SparTA: Deep-Learning Model Sparsity via Tensor-with-Sparsity-Attribute</h3>
+                <p>OSDI 2022 · <strong>Ningxin Zheng</strong>, Bin Lin, Quanlu Zhang, Lingxiao Ma, Yuqing Yang, Fan Yang, et al.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2022</div>
+              <div>
+                <h3>QoS-Aware Irregular Collaborative Inference for Improving Throughput of DNN Services</h3>
+                <p>SC 2022 · Kaihua Fu, Jiuchen Shi, Quan Chen, <strong>Ningxin Zheng</strong>, Wei Zhang, Deze Zeng, Minyi Guo.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2021</div>
+              <div>
+                <h3>nn-Meter: towards accurate latency prediction of deep-learning model inference on diverse edge devices <span class="award">MobiSys 2021 Best Paper Award</span></h3>
+                <p>MobiSys 2021 · Li Lyna Zhang, Shihao Han, Jianyu Wei, <strong>Ningxin Zheng</strong>, Ting Cao, Yuqing Yang, Yunxin Liu. Also received all three highest Artifact Evaluation badges.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2021</div>
+              <div>
+                <h3>CHARM: Collaborative Host and Accelerator Resource Management for GPU Datacenters</h3>
+                <p>ICCD 2021 · Wei Zhang, Kaihua Fu, <strong>Ningxin Zheng</strong>, Quan Chen, Chao Li, Wenli Zheng, Minyi Guo.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2021</div>
+              <div>
+                <h3>Enable simultaneous DNN services based on deterministic operator overlap and precise latency prediction</h3>
+                <p>SC 2021 · Weihao Cui, Han Zhao, Quan Chen, <strong>Ningxin Zheng</strong>, Jingwen Leng, Jieru Zhao, et al.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2020</div>
+              <div>
+                <h3>URSA: Precise Capacity Planning and Fair Scheduling based on Low-level Statistics for Public Clouds</h3>
+                <p>ICPP 2020 · Wei Zhang, <strong>Ningxin Zheng</strong>, Quan Chen, Yong Yang, Zhuo Song, Tao Ma, et al.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2019</div>
+              <div>
+                <h3>POSTER: Precise Capacity Planning for Database Public Clouds</h3>
+                <p>PACT 2019 · <strong>Ningxin Zheng</strong>, Quan Chen, Yong Yang, Jin Li, Wenli Zheng, Minyi Guo.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2018</div>
+              <div>
+                <h3>CLIBE: Precise Cluster-Level I/O Bandwidth Enforcement in Distributed File System</h3>
+                <p>HPCC/SmartCity/DSS 2018 · <strong>Ningxin Zheng</strong>, Quan Chen, Chen Chen, Minyi Guo.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="publication-panel" data-publication-panel="algorithms">
+          <div class="publication-list compact">
+            <article class="publication">
+              <div class="pub-year">2024</div>
+              <div>
+                <h3>Online Streaming Video Super-Resolution With Convolutional Look-Up Table</h3>
+                <p>IEEE Transactions on Image Processing 2024 · Guanghao Yin, Zefan Qu, Xinyang Jiang, Shan Jiang, Zhenhua Han, <strong>Ningxin Zheng</strong>, et al.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2023</div>
+              <div>
+                <h3>Online Video Super-Resolution With Convolutional Kernel Bypass Grafts</h3>
+                <p>IEEE Transactions on Multimedia 2023 · Jun Xiao, Xinyang Jiang, <strong>Ningxin Zheng</strong>, Huan Yang, Yifan Yang, Yuqing Yang, et al.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2023</div>
+              <div>
+                <h3>EfficientViT: Memory Efficient Vision Transformer with Cascaded Group Attention</h3>
+                <p>CVPR 2023 · Xinyu Liu, Houwen Peng, <strong>Ningxin Zheng</strong>, Yuqing Yang, Han Hu, Yixuan Yuan.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2023</div>
+              <div>
+                <h3>SpaceEvo: Hardware-Friendly Search Space Design for Efficient INT8 Inference</h3>
+                <p>ICCV 2023 · Xudong Wang, Li Lyna Zhang, Jiahang Xu, Quanlu Zhang, Yujing Wang, Yuqing Yang, <strong>Ningxin Zheng</strong>, et al.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <div class="pub-year">2021</div>
+              <div>
+                <h3>Full-Cycle Energy Consumption Benchmark for Low-Carbon Computer Vision</h3>
+                <p>CoRR 2021 · Bo Li, Xinyang Jiang, Donglin Bai, Yuge Zhang, <strong>Ningxin Zheng</strong>, Xuanyi Dong, et al.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section-heading">
+          <p class="eyebrow">Open source</p>
+          <h2>Selected projects</h2>
+        </div>
+        <div class="project-grid compact-projects">
+          <a class="project-card featured" href="https://github.com/bytedance/flux" target="_blank" rel="noopener">
+            <span class="repo-tag">ByteDance</span>
+            <h3>FLUX</h3>
+            <p>A GPU communication-overlap library for tensor and expert parallelism, built around CUDA/CUTLASS kernels and PyTorch integration.</p>
+            <div class="repo-meta"><span>C++</span><span>CUDA · GPU · PyTorch</span></div>
+          </a>
+          <a class="project-card" href="https://github.com/microsoft/nni" target="_blank" rel="noopener">
+            <span class="repo-tag">Microsoft</span>
+            <h3>NNI</h3>
+            <p>An open-source AutoML toolkit covering neural architecture search, model compression, hyper-parameter tuning, and ML lifecycle automation.</p>
+            <div class="repo-meta"><span>Python</span><span>NAS · Compression · AutoML</span></div>
+          </a>
+          <a class="project-card featured" href="https://github.com/ByteDance-Seed/Triton-distributed" target="_blank" rel="noopener">
+            <span class="repo-tag">ByteDance-Seed</span>
+            <h3>Triton-distributed</h3>
+            <p>A distributed compiler based on Triton for programming parallel AI systems and generating compute-communication overlapping kernels.</p>
+            <div class="repo-meta"><span>Python</span><span>Triton · Compiler · Distributed</span></div>
+          </a>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Find me online</h2>
+          <p>For publications, source code, and recent work, the links below are the most reliable public entry points.</p>
+        </div>
+        <div class="contact-links">
+          <a href="https://github.com/zheng-ningxin" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://scholar.google.com/citations?user=ND2CeBkAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://dblp.org/pid/234/5381.html" target="_blank" rel="noopener">DBLP</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Ningxin Zheng. Built for GitHub Pages.</p>
+      <a href="#top">Back to top</a>
+    </footer>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
