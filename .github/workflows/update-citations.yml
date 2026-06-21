@@ -1,0 +1,42 @@
+name: Update citations
+
+on:
+  schedule:
+    # Run daily at 00:00 UTC, which is 08:00 in Beijing time.
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-citations:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Update citation data
+        run: node scripts/update-citations.mjs
+
+      - name: Commit updated citation data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add data/citations.json data/gs_data_shieldsio.json
+
+          if git diff --cached --quiet; then
+            echo "No citation changes to commit."
+          else
+            git commit -m "Update citation data"
+            git push origin master
+          fi
