@@ -5,7 +5,6 @@ const repoRoot = path.resolve(new URL("..", import.meta.url).pathname);
 const outputPath = path.join(repoRoot, "data", "citations.json");
 const shieldsOutputPath = path.join(repoRoot, "data", "gs_data_shieldsio.json");
 const scholarUrl = "https://scholar.google.com/citations?user=ND2CeBkAAAAJ&hl=en";
-const openAlexUrl = "https://api.openalex.org/authors/A5018118687";
 
 const nowIso = new Date().toISOString();
 
@@ -65,34 +64,14 @@ const fetchGoogleScholar = async () => {
   };
 };
 
-const fetchOpenAlex = async (reason) => {
-  const response = await fetchWithTimeout(openAlexUrl, { headers: { "accept": "application/json" } }, 15000);
-  if (!response.ok) throw new Error(`OpenAlex fallback failed: HTTP ${response.status}`);
-
-  const data = await response.json();
-  const stats = data.summary_stats || {};
-
-  return {
-    source: "openalex",
-    sourceLabel: "OpenAlex",
-    sourceUrl: "https://openalex.org/A5018118687",
-    citations: Number(data.cited_by_count || 0),
-    hIndex: stats.h_index ?? null,
-    i10Index: stats.i10_index ?? null,
-    updatedAt: data.updated_date || nowIso,
-    note: reason ? `Google Scholar unavailable during scheduled update: ${reason}` : undefined,
-    googleScholarUrl: scholarUrl
-  };
-};
-
 let citationData;
 try {
   citationData = await fetchGoogleScholar();
   console.log(`Google Scholar citations: ${citationData.citations}`);
 } catch (error) {
   console.warn(error.message);
-  citationData = await fetchOpenAlex(error.message);
-  console.log(`OpenAlex fallback citations: ${citationData.citations}`);
+  console.warn("Google Scholar unavailable. Keeping existing citation data instead of falling back to another source.");
+  process.exit(0);
 }
 
 const shieldsData = {
